@@ -93,8 +93,8 @@ def run():
 
     for data in get_batch(test_triplet, batch_size=256):
         a, p, n = data
-        pos_list = np.append(pos_list, classify_images(a, p, encoder))
-        neg_list = np.append(neg_list, classify_images(a, n, encoder))
+        pos_list = np.append(pos_list, classify_images(a, p, encoder = encoder))
+        neg_list = np.append(neg_list, classify_images(a, n, encoder = encoder))
         break
 
     # Compute and print the accuracy
