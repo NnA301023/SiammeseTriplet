@@ -63,8 +63,11 @@ def run():
         print(f"\nEPOCH: {epoch} \t (Epoch done in {int(time.time()-t)} sec)")
         print(f"Loss on train    = {epoch_loss:.5f}")
         
+        # NOTE: check test_triplets.
+        print(test_triplet)
+
         # Testing the model on test data
-        metric = test_on_triplets(batch_size=batch_size)
+        metric = test_on_triplets(batch_size = batch_size, test_triplet = test_triplet, siamese_model = siamese_model)
         test_metrics.append(metric)
         accuracy = metric[0]
         

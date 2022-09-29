@@ -195,8 +195,9 @@ class SiameseModel(Model):
 
 def test_on_triplets(batch_size = 256, test_triplet = None, siamese_model = None):
     pos_scores, neg_scores = [], []
-
-    for data in get_batch(test_triplet, batch_size=batch_size):
+    batches = get_batch(test_triplet, batch_size = batch_size)
+    
+    for data in batches:
         prediction = siamese_model.predict(data)
         pos_scores += list(prediction[0])
         neg_scores += list(prediction[1])
