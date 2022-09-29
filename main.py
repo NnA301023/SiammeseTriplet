@@ -77,12 +77,12 @@ def run():
             max_acc = accuracy
         
     # Saving the model after all epochs run
-    siamese_model.save("siamese_model_all.h5")
+    # siamese_model.save("siamese_model_all.h5")
     siamese_model.save_weights("siamese_model-final")
 
     # Save the model of encoder extractor
     encoder = extract_encoder(siamese_model)
-    encoder.save("encoder_all.h5")
+    # encoder.save("encoder_all.h5")
     encoder.save_weights("encoder")
     print(encoder.summary())
 
