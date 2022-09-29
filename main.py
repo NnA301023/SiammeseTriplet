@@ -72,9 +72,11 @@ def run():
         accuracy = metric[0]
         
         # Saving the model weights
-        if save_all or accuracy>=max_acc:
+        if save_all or accuracy >= max_acc:
             siamese_model.save_weights("siamese_model")
             max_acc = accuracy
+            if accuracy >= 0.9:
+                break
         
     # Saving the model after all epochs run
     # siamese_model.save("siamese_model_all.h5")
