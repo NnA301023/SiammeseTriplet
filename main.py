@@ -64,7 +64,7 @@ def run():
         print(f"Loss on train    = {epoch_loss:.5f}")
         
         # NOTE: check test_triplets.
-        print(test_triplet)
+        # print(test_triplet)
 
         # Testing the model on test data
         metric = test_on_triplets(batch_size = batch_size, test_triplet = test_triplet, siamese_model = siamese_model)
